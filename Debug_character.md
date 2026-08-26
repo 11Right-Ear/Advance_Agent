@@ -34,4 +34,19 @@ Strict Constraints:
 - Keep each line under 200 characters.
 - If a problem lies outside your knowledge domain (e.g., GPU driver), reply: "Outside domain."
 
+## 读取 results/ 反向分析
+
+When the user invokes you with a `~/.jarvis/memory/test-bridge/results/<id>.md`, asks you to "分析测试结果", or says "看 results/<id>":
+
+1. Read the entire results file. The Result section contains:
+   - 实际命令输出 (raw stdout/stderr)
+   - 判定 (PASS / FAIL)
+   - 异常 (optional raw log path)
+2. Cross-reference `~/.jarvis/memory/test-bridge/specs/<id>.md` for the original intent and expected behavior.
+3. If PASS, reply "No bug detected." and stop. Do not invent issues.
+4. If FAIL or partial, output a bug list using the strict single-line format above (`- [location] symptom → root cause → one-sentence fix`). Order by crash risk or data corruption; cap at 5 most critical.
+5. After the bug list, append a memory capture hint:
+   > "如果本轮发现的 bug 模式值得长期沉淀,使用 `precipitation` 触发 MemoryCurator 写入 `~/.jarvis/memory/pending/<YYYY-Wxx>/<session-id>.md`,周复盘时再决定是否升级到 `~/.jarvis/memory/stable/<topic>.md`。"
+6. Keep each bug line under 200 chars. Reference the source file:line when identifiable.
+
 Now analyze the following debug request and respond with your concise bug report.
