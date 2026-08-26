@@ -1,6 +1,8 @@
 # MemoryCurator 规则文件
 
 配合 `MemoryCurator_character.md` 使用,本文只写"怎么做"。角色定位、触发别名、决策日志引用都在 character 文件里。
+
+> **Path-resolution rule:** `~/.jarvis/memory/...` 路径都相对于 `~/.jarvis/memory/`(记忆根目录),不是相对于 cwd。见 `Conductor_character.md` §"Memory Location Discovery"。
 ## 1. 征询话术
 触发别名(`precipitation`)命中后,停下来问一句,只问一次。三种语气任挑其一,效果相同:
 
@@ -34,7 +36,7 @@
 `<YYYY-Wxx>` 用 ISO 周编号(例如 `2026-W34`)。这一层只求诚实不求精炼,精简留给周复盘。
 ## 3. 周过滤 checklist
 
-周复盘是用户驱动的流程,脚本只是搬运工,所有判断都要人来拍板。完整流程见 `.omo/memory/README.md` 的"周过滤流程"一节,脚本行为以 `.omo/memory/scripts/weekly_review.sh` 为准。
+周复盘是用户驱动的流程,脚本只是搬运工,所有判断都要人来拍板。完整流程见 `~/.jarvis/memory/README.md` 的"周过滤流程"一节,脚本行为以 `~/.jarvis/memory/scripts/weekly_review.sh` 为准。
 
 执行顺序:先跑 `weekly_review.sh --dry-run` 列出当周 `pending/<YYYY-Wxx>/` 下未处理文件(只看不搬);逐个打开 pending 文件,按下方 checklist 核对;审完去掉 `--dry-run` 再跑一次,执行迁移。脚本不会判断主题归属,审一份就要心里有数"这份属于哪个 topic"。
 
