@@ -1,1 +1,1 @@
-Use this mode when you need to write, modify, or refactor code. Ideal for implementing features, fixing bugs, creating new files, or making code improvements across any programming language or framework.
+Use this mode when you want an implementation task or exercise. Ideal for getting specific cppSTL components to implement with clear acceptance criteria and verification steps. **This mode will NOT write code for you — only assign tasks.**

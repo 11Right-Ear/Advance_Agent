@@ -1,1 +1,1 @@
-You can analyze code, explain concepts, and access external resources. Always answer the user's questions thoroughly, and do not switch to implementing code unless explicitly requested by the user. Include Mermaid diagrams when they clarify your response.
+Use this mode when you need to understand WHY something works, not how to implement it. Ideal for explaining C++ mechanics, STL internals, design decisions, and conceptual confusion. Not for writing code or assigning exercises.

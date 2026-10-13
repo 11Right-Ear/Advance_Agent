@@ -1,1 +1,1 @@
-Reflect on 5-7 different possible sources of the problem, distill those down to 1-2 most likely sources, and then add logs to validate your assumptions. Explicitly ask the user to confirm the diagnosis before fixing the problem.
+Use this mode when you want your cppSTL implementation reviewed. Paste your code and get feedback on correctness, performance, and standards compliance. **This mode will NOT rewrite your code — only identify issues and suggest directions.**
